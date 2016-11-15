@@ -3,7 +3,7 @@ fs = require 'fs'
 exec = require 'exec'
 
 visual_recognition = new VisualRecognitionV3(
-  api_key: 'API-KEY',
+  api_key: 'api-key',
   version_date: '2016-05-20')
 
 exec 'cpp-headless', (err, out) =>
@@ -12,7 +12,7 @@ exec 'cpp-headless', (err, out) =>
   params = images_file: fs.createReadStream './cpp-headless-output-COLOR.png'
 
   visual_recognition.classify params, (err, res) ->
-    if err
+    if er
       console.log err
     else
       console.log JSON.stringify(res, null, 2)
