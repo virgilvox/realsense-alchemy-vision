@@ -12,7 +12,7 @@ exec 'cpp-headless', (err, out) =>
   params = images_file: fs.createReadStream './cpp-headless-output-COLOR.png'
 
   visual_recognition.classify params, (err, res) ->
-    if er
+    if err
       console.log err
     else
       console.log JSON.stringify(res, null, 2)
